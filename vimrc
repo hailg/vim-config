@@ -8,6 +8,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 "git interface
 Plugin 'tpope/vim-fugitive'
+
 "filesystem
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
@@ -15,15 +16,14 @@ Plugin 'kien/ctrlp.vim'
 
 Plugin 'nvie/vim-flake8'
 Plugin 'vim-scripts/indentpython.vim'
-"Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 
 "auto-completion stuff
-"Plugin 'klen/python-mode'
-"Plugin 'klen/rope-vim'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'ervandew/supertab'
+
 "code folding
-"Plugin 'tmhedberg/SimpylFold'
+Plugin 'tmhedberg/SimpylFold'
 
 "Colors!!!
 Plugin 'altercation/vim-colors-solarized'
@@ -46,12 +46,11 @@ set noswapfile
 set nu
 
 " autocomplettion
-
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 
-"autocmd FileType python set omnifunc=pythoncomplete#Complete
+" code folding
+let g:SimpylFold_docstring_preview=1
 
-"------------Start Python PEP 8 stuff----------------
 " Number of spaces that a pre-existing tab is equal to.
 au BufRead,BufNewFile *py,*pyw,*.c,*.h set tabstop=4
 
@@ -80,6 +79,7 @@ set encoding=utf-8
 " For full syntax highlighting:
 let python_highlight_all=1
 syntax on
+"let g:syntastic_check_on_open = 1
 
 " Keep indentation level from previous line:
 autocmd FileType python set autoindent
